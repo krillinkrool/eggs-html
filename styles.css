@@ -5,12 +5,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding-top: 1000;
+  padding-top: 20%;
+  padding-bottom: 20%;
 }
 
 .cat-hero-title {
   text-align: center;
-  transform: translate(-50%, -50%);
+  transform: translate(0, -50%);
   color: white;
 }
 
@@ -19,13 +20,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   color: white;
 }
 
 body, html {
     height: 100%;
-    margin: 0;
 }
 
 body {
@@ -33,6 +33,10 @@ body {
     justify-content: center;
     background-color: #FFFD74;
     color: black;
+}
+
+section {
+    margin-left: 50px;
 }
 
 .noto-sans {
