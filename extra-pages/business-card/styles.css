@@ -13,9 +13,11 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: 300px;
-  background-color: rgb(90, 67, 224);
+  background-color: rgb(201, 54, 56);
   color: White;
   padding: 20px;
+  border-radius: 5px;
+  border-color: rgb(201, 54, 56);
 }
 
 h1, h2 {
@@ -45,5 +47,13 @@ p {
 
 a {
   text-decoration: none;
-  color:rgb(215, 224, 250)
+  color:rgb(255, 165, 145);
+}
+
+a:visited {
+  color:rgb(255, 207, 200);
+}
+
+a:hover {
+  color: white;
 }
