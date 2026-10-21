@@ -1,7 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background-color: rosybrown;
+  background-image: url("./assets/yellow-sparkle.gif");
+  background-size: contain;
 }
 
 .business-card {
@@ -12,7 +13,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: 500px;
-  background-color: rgb(234, 234, 173);
+  background-color: rgb(90, 67, 224);
+  color: White;
   padding: 20px;
 }
 
@@ -43,4 +45,5 @@ p {
 
 a {
   text-decoration: none;
+  color:rgb(215, 224, 250)
 }
