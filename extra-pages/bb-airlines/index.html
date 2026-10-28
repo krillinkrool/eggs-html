@@ -11,11 +11,14 @@
         <main>
             <h1>Hello, Welcome to the bb airlines.</h1>
             <img src="https://i.pinimg.com/originals/4d/76/af/4d76aff8e0ad2fa938634bb4f8bdafe9.jpg" alt=""/>
-            <audio controls>
-                <source src="./assets/sounds/hello.mp3" type="audio/mp3"/>
+            <audio id="helloAudio" controls>
+                <source src="./assets/sounds/hello_alt2.mp3" type="audio/mp3"/>
             </audio>
         </main>
     </div>
+    <script>
+        document.getElementById("helloAudio").volume = 0.3;
+    </script>
 </body>
 <footer>
     <div>

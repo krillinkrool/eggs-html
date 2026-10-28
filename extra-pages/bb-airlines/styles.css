@@ -46,7 +46,7 @@ audio::-webkit-media-controls-enclosure{
 
 /*FOOTER*/
 footer div {
-    background-color:black;
+    /*background-color:black;*/
     text-align: center;
     display: block;
     margin-right: auto;
