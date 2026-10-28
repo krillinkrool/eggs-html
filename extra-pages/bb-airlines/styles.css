@@ -1,0 +1,54 @@
+body {
+    background-image: url("./assets/aircraft-bg.jpg");
+    background-size: cover;
+    background-position:top;
+    background-repeat: no-repeat;
+    background-color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    margin-top: 100px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 500px;
+    background-color: #4F8BA8;
+    color: white;
+    padding: 20px;
+    border-color: inherit;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    display: block;
+    width: 60%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+audio {
+    margin-top: 20px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+audio::-webkit-media-controls-enclosure{
+    background-color: #4F8BA8;
+}
+
+
+/*FOOTER*/
+footer div {
+    background-color:black;
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
