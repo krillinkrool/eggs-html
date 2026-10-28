@@ -30,6 +30,8 @@ img {
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
+    border-color: #4F8BA8;
+    border-radius: 10px;
 }
 
 audio {
