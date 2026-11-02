@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet"/>
+    <title>Gift for you</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Libre+Franklin:ital@0;1&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main_container">
+        <main>
+            <audio></audio>
+            <div id="birthday_title" class="div-happy-birthday"><h1 class="dynapuff-happy-birthday yellow">H</h1><h1 class="dynapuff-happy-birthday blue">A</h1><h1 class="dynapuff-happy-birthday pink"
+            >P</h1><h1 class="dynapuff-happy-birthday orange">P</h1><h1 class="dynapuff-happy-birthday green">Y </h1>
+            <h1 class="dynapuff-happy-birthday blue">B</h1><h1 class="dynapuff-happy-birthday yellow">I</h1><h1 class="dynapuff-happy-birthday pink"
+            >R</h1><h1 class="dynapuff-happy-birthday orange">T</h1><h1 class="dynapuff-happy-birthday yellow">H</h1><h1 class="dynapuff-happy-birthday green"
+            >D</h1><h1 class="dynapuff-happy-birthday orange">A</h1><h1 class="dynapuff-happy-birthday yellow">Y</h1>
+            <div><h1 class="dynapuff-happy-birthday blue">M</h1><h1 class="dynapuff-happy-birthday pink">I</h1><h1 class="dynapuff-happy-birthday orange">E</h1
+            ><h1 class="dynapuff-happy-birthday blue">!</h1><h1 class="dynapuff-happy-birthday pink"
+            >!</h1><h1 class="dynapuff-happy-birthday green">!</h1></div></div>
+            <div id="changing_container">
+                <!-- Happpy Birthday H1 Text -->
+                 <!-- PARTY PALLETE (COLORS) -->
+                <!-- #ffe47d yellow
+                #d47e3e orange
+                #d5a9b9 pink
+                #85b1bd blue
+                #9ebe96 green
+                #ffffff white -->
+
+
+
+                <p class="work-sans card-title">Hello bb, gifto for u</p>
+                <img class="present_boy_img" src="./assets/images/present_boy.png" alt="Boy holding present"/>
+                <button id="birthday_button">Press</button>
+            </div>
+        </main>
+    </div>  
+
+    <!-- <script src="script.js"> -->
+    <script>
+        //Main Message
+        const messages = [
+                    "Happy Birthday bb!!! Actually si past dale ja, nagsulat ako at 3am, hahahaaa. Happy birthday bb, ",
+                    "tlad dun ang once in every year day mo, the day of borning(?) charr. ",
+                    "Okay, so, um, lipat ko kung ano I-say ko, so, wait, um, I-dumdumon ko any liwan.\n\n Hahaa, Joking aside. ",
+                    "(Si present dale dun ja) ",
+                    "I'm happy it's your birthday bb. huhu wra pa ko like matao knimo this year ",
+                    "(I’m hoping next year mwaybe?😭). \n\nPy, um, I wanna say something though and that is nga, ",
+                    "very emo (\"ambot sa emo dale\" so prepare your best cringe expression (if u r cringing). ",
+                    "Thank you for coming to my life bb, last year. And I know wra pa kita kakitaay huhu py, ",
+                    "I really want to be able to meet you gd, and you know, whatever happens magkitaay ta😭, I'll ",
+                    "accept your decision😭, (\"may putok kw dale block tkaw\") charrr ",
+                    "(ma deodorant aku). I really, reallly, really thank you. If it wasn't for you bb, bsi ",
+                    "ultra depression ako gd. Charr, py seriously, thank you gd sa imo cheekiness. ",
+                    "Sa imo humor, sa imo kind words knakon. I really feel loved kg happy whenever mag chat kita. \n\n",
+                    "Thank you bb for giving me your time and energy, and ang iyong sabado, (para bang para bang). ",
+                    "I have never connected to someone like this before and its driving me crazy, im crazy for youuu. ",
+                    "I love you bb and thank you gd for everything, I really mean it (idk pano i say sa karay-a) ",
+                    "Happy birthday Elemie Magalay, I wish you success gd sa board exam, magiging RN ka sa 2027 lets gooooooo",
+                    "(I hope wra tkaw na give ka aneurysm sa akon writing skills)"
+                ];
+                const birthday_message = messages.join("");
+
+        const changing_container = document.querySelector("#changing_container");
+        //Emojis
+        const birthdayEmojis = ["🎉", "🎈", "🎁", "✨"];
+
+        function swapContent(){
+            changing_container.classList.add("fade-out");
+            setTimeout(() => {
+                changing_container.InnerHTML = html;
+                changing_container.classList.remove("fade-out");
+                if (afterSwap) afterSwap();
+            }, 500);
+        }
+
+        function showTease() {
+            swapContentMsgs = [' <p class="work-sans card-title">Wait... are you sure you\'re ready? 👀</p>',
+                        '<button id="reveal_button">Yes, show me</button>)'];
+            swapContent(swapContentMsgs.join(""), () => {
+                document.getElementById("reveal_button").addEventListener("click", showMessage)
+            });
+        }
+
+        function spawnEmojis() {
+            for (let numberOfEmojis = 0; numberOfEmojis < 25; numberOfEmojis++ )
+            {
+                const spanEmojis = document.createElement("span");
+                spanEmojis.className = "birthday_emojis";
+                spanEmojis.textContent = birthdayEmojis[Math.floor(Math.random() * birthdayEmojis.length)];
+                spanEmojis.style.left = Math.random() * 100 + "vw"; //randomm colummn
+                spanEmojis.style.fontSize = 16 + Math.random() * 24 + "px"; // random size
+                spanEmojis.style.animationDuration = 6 + Math.random() * 8 + "s"; // random speed
+                spanEmojis.style.animationDelay = -Math.random() * 10 + "s";
+                document.body.appendChild(spanEmojis);
+            }
+
+            // document.getElementById("birthday_title").addEventListener("click", () => {
+            //     birthday_title = document.querySelector("birthday_title");
+            //     birthday_title.classList.add();
+            // });
+            }
+
+        spawnEmojis();
+
+        document.getElementById("birthday_button").addEventListener("click", () => { 
+            setTimeout(() => {
+
+                changing_container_HTML = ['<img class="img-girl" src="./assets/images/birthday_girl.png" />',
+                                            '<img class="img-girl" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHg5ZnNzcmQxb2swcG1mdjluOW9xaGRxanhmZjI2aG9tazducjJ2byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QXppKCmid0gY8ETOdO/giphy.gif" alt="penguin wishing happy birthday"/>',
+                                            '<p id="birthday_message"></p>'];
+                
+                changing_container.innerHTML = changing_container_HTML.join("");
+                changing_container.classList.remove("fade-out");
+
+                const typing_message = document.getElementById("birthday_message");
+                let message_character = 0;
+                const timer = setInterval(() => {
+                    typing_message.textContent += birthday_message[message_character];
+                    message_character++;
+                    if (message_character >= birthday_message.length) clearInterval(timer);
+                    }, 5);
+                }, 500);
+        });
+    </script>
+</body>
+</html>
+
