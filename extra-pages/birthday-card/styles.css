@@ -145,6 +145,16 @@ figcaption {
     margin-left: auto;
 }
 
+.img-punched {
+    width: 40%;
+    opacity: 80%;
+    z-index: 1;
+    max-width: 300px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 
 .present_boy_img {
     display: flex;
