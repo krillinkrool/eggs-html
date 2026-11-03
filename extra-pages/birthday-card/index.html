@@ -113,26 +113,29 @@
         function showTease() {
             const swapContentMsgs = [
                         '<img class="img-contained" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGFuOTJqcmMwMWczaXBhYWt6aWRxNTJvbWo0cTM3aDA5cDBhbzRncyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XoS1xoQhgxRjGJbnoP/giphy.gif" alt="penguin wishing happy birthday"/>',
-                        ' <p class="work-sans card-title">Waits lng bb ga loading pa, ok ja dun 👀</p>',
+                        ' <p class="work-sans card-title">Waits lng bb ga loading pa <br></br> ok ja dun 👀</p>',
                         '<button id="reveal_button">Press</button>'];
             swapContent(swapContentMsgs.join(""), () => {
-                document.getElementById("reveal_button").addEventListener("click", () => {
+                document.getElementById("reveal_button").addEventListener("click", (e) => {
+                    e.currentTarget.disabled = true;
                     setTimeout(showTease2, 1000);
                 })
             });
         }
 
         function showTease2() {
-            const swapContentMsgs = [' <p class="work-sans card-title">Ay wait di pa ready, ma cr ko any, charr ja hu 👀</p>',
+            const swapContentMsgs = [' <p class="work-sans card-title">Ay wait di pa ready, ma cr ko any<br></br> charr ja hu 👀</p>',
                         '<img class="img-contained" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTAxMjI2eGNmZzA3cjR3c2k4NnNmeXV6djU4NTV2djVrb2w5ZzJlcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/oGTBD3l3pK1aDaG9pu/giphy.gif" alt="penguin wishing happy birthday"/>',
                         '<button id="reveal_button_alt">Press to punch dale</button>',
                         '<button id="reveal_button">or not</button>',
                     ];
             swapContent(swapContentMsgs.join(""), () => {
-                document.getElementById("reveal_button").addEventListener("click", () => {
+                document.getElementById("reveal_button").addEventListener("click", (e) => {
+                    e.currentTarget.disabled = true;
                     setTimeout(showMessage, 1000);
                 })
-                document.getElementById("reveal_button_alt").addEventListener("click", () => {
+                document.getElementById("reveal_button_alt").addEventListener("click", (e) => {
+                    e.currentTarget.disabled = true;
                     setTimeout(showMessageAlt, 1000);
                 })
             });
@@ -216,7 +219,8 @@
         }
 
         spawnEmojis();
-        document.getElementById("birthday_button").addEventListener("click", () => {
+        document.getElementById("birthday_button").addEventListener("click", (e) => {
+            e.currentTarget.disabled = true;
             setTimeout(showTease, 1000);
         });
         document.addEventListener("click", (e) => {

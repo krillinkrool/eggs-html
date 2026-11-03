@@ -195,25 +195,42 @@ button {
     transition: transform 0.3s ease-in-out
 }
 
+
+
+  button, .birthday_emojis, .present_boy_img {
+      -webkit-tap-highlight-color: transparent;
+  }
+
 #reveal_button_alt {
-    margin-top: 10px;
-    margin-right: auto;
-    margin-left: auto;
-    display: flex;
+
     background-color: #d47e3e;
-    color: #ffffff;
-    /* padding-right: 10px;
-    padding-left: 10px; */
-    padding: 10px;
     border-color: #d47e3e;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out
+
 }
 
 button:hover {
     cursor: pointer;
     transform: scale(1.6);
     
+}
+
+button:active {
+    filter: brightness(0.75);
+    transform: scale(1.05);
+}
+
+button.clicked {
+    filter: brightness(0.75);
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: #3b5a3f;
+    transform: scale(1.6);
+}
+
+button:disabled {
+    filter: brightness(0.7);
+    cursor: default;
+    transform: none;
 }
 
 footer {
