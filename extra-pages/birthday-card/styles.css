@@ -43,20 +43,29 @@ body {
 .birthday_emojis {
     position: fixed;
     top: -50px;
-    z-index: 1;
-    pointer-events: none;
+    z-index: 5;
+    pointer-events: auto;
+    cursor: pointer;
+    user-select: none;
     animation: fall linear infinite;
 }
 @keyframes fall {
     to { transform: translateY(110vh) rotate(360deg); }
 }
 
+.burst {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10;
+}
+
+
 .card-title {
     text-align: center;
 }
 
 .main_container {
-    z-index: 2;
+    z-index: 1;
     margin-top: 150px;
     margin-bottom: 150px;
     margin-right: auto;
@@ -111,15 +120,11 @@ figcaption {
 
 /* Container Contents */
 #changing_container {
-    transition: opacity 0.5 ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 
 #changing_container.fade-out {
     opacity: 0;
-}
-
-#changing_container.fade-in {
-    opacity: 500;
 }
 
 #birthday_message {

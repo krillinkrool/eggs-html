@@ -90,7 +90,9 @@
                     "(I hope wra tkaw na give ka aneurysm sa akon writing skills)"
                 ];
         const birthday_message = messages.join("");
-        const changing_container_HTML = ['<img class="img-girl" src="./assets/images/birthday_girl.png" />',
+        const changing_container_HTML = [
+                                    '<audio autoplay class="background_music" id="bgm_track" src="./assets/sounds/unknown.m4a"></audio>',
+                                    '<img class="img-girl" src="./assets/images/birthday_girl.png" />',
                                     '<img class="img-girl" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHg5ZnNzcmQxb2swcG1mdjluOW9xaGRxanhmZjI2aG9tazducjJ2byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QXppKCmid0gY8ETOdO/giphy.gif" alt="penguin wishing happy birthday"/>',
                                     '<p id="birthday_message"></p>'];
 
@@ -105,7 +107,7 @@
                 changing_container.innerHTML = html;
                 changing_container.classList.remove("fade-out");
                 if (afterSwap) afterSwap();
-            });
+            }, 500);
         }
 
         function showTease() {
@@ -121,7 +123,7 @@
         }
 
         function showTease2() {
-            const swapContentMsgs = [' <p class="work-sans card-title">Ay wait di pa ready, charr ja hu 👀</p>',
+            const swapContentMsgs = [' <p class="work-sans card-title">Ay wait di pa ready, ma cr ko any, charr ja hu 👀</p>',
                         '<img class="img-contained" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTAxMjI2eGNmZzA3cjR3c2k4NnNmeXV6djU4NTV2djVrb2w5ZzJlcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/oGTBD3l3pK1aDaG9pu/giphy.gif" alt="penguin wishing happy birthday"/>',
                         '<button id="reveal_button_alt">Press to punch dale</button>',
                         '<button id="reveal_button">or not</button>',
@@ -150,6 +152,7 @@
 
         function showMessageAlt() {
             const changing_container_HTML = [
+                                    '<audio autoplay class="background_music" id="bgm_track" src="./assets/sounds/unknown.m4a"></audio>',
                                     '<img class="img-punched" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3A4YjhseG56amFzMXdmYTI0YmdyOWdtcDN0NTg1a2p1eDZtNjdsaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/te8J1t6B53nMwTFYSC/giphy.gif" alt="penguin wishing happy birthday"/>',    
                                     '<img class="img-girl" src="./assets/images/birthday_girl.png" />',
                                     '<img class="img-girl" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHg5ZnNzcmQxb2swcG1mdjluOW9xaGRxanhmZjI2aG9tazducjJ2byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QXppKCmid0gY8ETOdO/giphy.gif" alt="penguin wishing happy birthday"/>',
@@ -184,17 +187,49 @@
             // });
             }
 
+        function explode(explodingEmoji) {
+            const rect = explodingEmoji.getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height /2;
+
+            for (let emojiIndex = 0; emojiIndex < 12; emojiIndex++) {
+                const emojiPiece = document.createElement("span");
+                emojiPiece.className = "burst";
+                emojiPiece.textContent = "✨";
+                emojiPiece.style.left = x + "px";
+                emojiPiece.style.top = y + "px";
+                document.body.appendChild(emojiPiece);
+                
+                const randomAngle = Math.random() * Math.PI * 2;
+                const randomDistance = 40 + Math.random() * 80;
+                const dx = Math.cos(randomAngle) * randomDistance;
+                const dy = Math.sin(randomAngle) * randomDistance;
+
+                emojiPiece.animate([
+                    {transform: "translate(-50%, -50%) scale(1)", opacity: 1},
+                    {transform: `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(0.2)`, opacity: 0}]
+                , {duration: 500 + Math.random() * 400, easing: "ease-out"})
+                .onfinish = () => emojiPiece.remove();
+            }
+
+            explodingEmoji.remove();
+        }
+
         spawnEmojis();
         document.getElementById("birthday_button").addEventListener("click", () => {
             setTimeout(showTease, 1000);
         });
+        document.addEventListener("click", (e) => {
+            const emoji = e.target.closest(".birthday_emojis");
+            if (emoji) explode(emoji);
+        });
 
     </script>
 </body>
-<footer class="credits">
+<!-- <footer class="credits">
     Background by
     <a href="https://www.vecteezy.com/free-photos/birthday-card-background">Birthday Card Background Stock photos by Oleg Gapeenko</a>
     on <a href="https://www.vecteezy.com" target="_blank" rel="noopener">Vecteezy</a>
-</footer>
+</footer> -->
 </html> 
 
