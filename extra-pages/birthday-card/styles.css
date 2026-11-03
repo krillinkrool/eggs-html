@@ -29,7 +29,7 @@ from mydolcedesigns.com
 
 
 body {
-    background: url(/assets/images/birthday_card.jpeg), linear-gradient(135deg, #d5a9b9, #85b1bd);
+    background: url(./assets/images/birthday_card.jpeg), linear-gradient(135deg, #d5a9b9, #85b1bd);
     font-family: "Work Sans", sans-serif;
     background-position: center;
     background-size: cover;

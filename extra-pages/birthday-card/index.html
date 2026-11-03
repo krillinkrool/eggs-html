@@ -26,10 +26,10 @@
             >!</h1><h1 class="dynapuff-happy-birthday green">!</h1></div></div>
             <figure>
             <figcaption>Click for sound:</figcaption>
-            <audio controls autoplay class="background_music" id="bgm_track" src="/assets/sounds/happy-happy-happy-song.mp3"></audio>
-            <audio class="audio_class" id="audio1"  src="/assets/sounds/yippie.mp3"></audio>
-            <audio class="audio_class" id="audio2"  src="/assets/sounds/yippie.mp3"></audio>
-            <audio class="audio_class" id="audio3"  src="/assets/sounds/yippie.mp3"></audio>
+            <audio controls autoplay class="background_music" id="bgm_track" src="./assets/sounds/happy-happy-happy-song.mp3"></audio>
+            <audio class="audio_class" id="audio1"  src="./assets/sounds/yippie.mp3"></audio>
+            <audio class="audio_class" id="audio2"  src="./assets/sounds/yippie.mp3"></audio>
+            <audio class="audio_class" id="audio3"  src="./assets/sounds/yippie.mp3"></audio>
             <audio></audio>
             </figure>
             <div id="changing_container">
@@ -45,7 +45,7 @@
 
 
                 <p class="work-sans card-title">Hello bb, gifto for u</p>
-                <img class="present_boy_img" src="/assets/images/present_boy.png" alt="Boy holding present"/>
+                <img class="present_boy_img" src="./assets/images/present_boy.png" alt="Boy holding present"/>
                 <button id="birthday_button">Press</button>
             </div>
         </main>
@@ -90,7 +90,7 @@
                     "(I hope wra tkaw na give ka aneurysm sa akon writing skills)"
                 ];
         const birthday_message = messages.join("");
-        const changing_container_HTML = ['<img class="img-girl" src="/assets/images/birthday_girl.png" />',
+        const changing_container_HTML = ['<img class="img-girl" src="./assets/images/birthday_girl.png" />',
                                     '<img class="img-girl" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHg5ZnNzcmQxb2swcG1mdjluOW9xaGRxanhmZjI2aG9tazducjJ2byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QXppKCmid0gY8ETOdO/giphy.gif" alt="penguin wishing happy birthday"/>',
                                     '<p id="birthday_message"></p>'];
 
@@ -151,7 +151,7 @@
         function showMessageAlt() {
             const changing_container_HTML = [
                                     '<img class="img-contained" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3A4YjhseG56amFzMXdmYTI0YmdyOWdtcDN0NTg1a2p1eDZtNjdsaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/te8J1t6B53nMwTFYSC/giphy.gif" alt="penguin wishing happy birthday"/>',    
-                                    '<img class="img-girl" src="/assets/images/birthday_girl.png" />',
+                                    '<img class="img-girl" src="./assets/images/birthday_girl.png" />',
                                     '<img class="img-girl" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHg5ZnNzcmQxb2swcG1mdjluOW9xaGRxanhmZjI2aG9tazducjJ2byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QXppKCmid0gY8ETOdO/giphy.gif" alt="penguin wishing happy birthday"/>',
                                     '<p id="birthday_message"></p>'];
             swapContent(changing_container_HTML.join(""), () => {
